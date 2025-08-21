@@ -4,6 +4,8 @@
 # as the base image
 FROM debian:stable-slim
 
-# execute the 'echo "hello world"'
-# command when the container runs
-CMD ["echo", "hello world"]
+# COPY source destination
+COPY docker_bootdev /bin/docker_bootdev
+
+# This automatically starts the server process in the container when we run it.
+CMD ["/bin/docker_bootdev"]
